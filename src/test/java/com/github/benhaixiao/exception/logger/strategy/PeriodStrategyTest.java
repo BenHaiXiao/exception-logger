@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @author Xu.zhipeng
+ * @author xiaobenhai
  */
 public class PeriodStrategyTest {
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <!-- default的error控制 -->
+    <bean id="defaultExceptionLoggerFactory" class="com.github.benhaixiao.exception.logger.factory.FrequencyPeriodLoggerFactory">
+        <!-- 两个策略间使用OR的关系 ，Or关系：true，And关系：false -->
+        <property name="useOrLogic" value="true"/>
+        <!-- 1分钟内出现4次error  单位：次数-->
+        <property name="frequency" value="4"/>
+        <!-- 1分钟内出现4次error 单位：秒（s） -->
+        <property name="frequencyTime" value="60"/>
+        <!-- 100次调用里出现10次error -->
+        <property name="period" value="100"/>
+        <property name="threshold" value="10"/>
+    </bean>
+
+</beans>

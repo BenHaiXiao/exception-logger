@@ -8,7 +8,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.spi.FilterReply;
 
 /**
- * Created by Administrator on 2017/3/7.
+ * @author xiaobenhai
  */
 public class IgnoreExceptionThresholdFilter extends ThresholdFilter {
 

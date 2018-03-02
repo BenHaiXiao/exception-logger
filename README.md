@@ -1,5 +1,8 @@
 # Error Log的输出控制器
 ----
+为保证线上服务的稳定性，一般系统都会对error-log进行监控告警，即监控相关业务目录结构下error-log日志，并提交告警给相关业务人员处理；
+然而某些特殊场景如网络波动，一次或者几次的error-log不需要研发人员引起关注，所以需要当error-log在一定时间内，错误日志达到某一个比例，才进行告警。
+所以总结线上和业务日常需求，为了是研发人员更加灵活多变的去告警，建立了一套告警监控模型。
 
 ## ExceptionLogger用法
 
@@ -16,12 +19,15 @@
 		exceptionLogger.addUpTotal();
 
 		// do something
-		
 		try {
 			// do something there will throw some exceptions
 		} catch (Exception e) {
 			// 采用slf4j的参数格式，只是需把slf4j的实例传进去
 			exceptionLogger.error(logger, "msg format", arg);
+			
+			if(exceptionLogger.isOverflow()){
+			//告警所要做的事情 do something error log 
+			};
 		}
 	}
 

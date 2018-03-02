@@ -1,9 +1,7 @@
 package com.github.benhaixiao.exception.logger;
 
-import com.github.benhaixiao.exception.logger.ExceptionLogger;
 import com.github.benhaixiao.exception.logger.strategy.FrequencyStrategy;
 import com.github.benhaixiao.exception.logger.strategy.RatioStrategy;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -42,6 +40,7 @@ public class ExceptionLoggerTest {
         logger1.addStrategy(new RatioStrategy(1, 3));
         assertEquals(1, logger1.addUpTotal());
         assertEquals(2, logger1.addUpTotal());
+
     }
 
 }
